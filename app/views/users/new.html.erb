@@ -1,0 +1,49 @@
+<%= render "shared/partial" %>
+
+<% if flash[:delete] %>
+  <p class="delete"><%= flash[:delete] %></p>
+<% end %>
+
+<section class="form-wrapper">
+  <div class="title">
+    <h2>予定の新規追加</h2>
+  </div>
+
+  <%= render "shared/error", obj: @user %>
+  <%= form_with model: @user do |f| %>
+    <table class="new-table">
+      <tr>
+        <th><%= f.label :title , "タイトル" %></th>
+        <td><%= f.text_field :title %></td>
+      </tr>
+
+      <tr>
+        <th><%= f.label :startDate , "開始日" %></th>
+        <td><%= f.date_field :startDate %></td>
+      </tr>
+
+      <tr>
+        <th><%= f.label :endDate , "終了日" %></th>
+        <td><%= f.date_field :endDate %></td>
+      </tr>
+
+      <tr>
+        <th><%= f.label :allDay , "終日の場合はチェックを入れます" %></th>
+        <td><%= f.check_box :allDay ,{}, "○", "" %></td>
+      </tr>
+
+      <tr>
+        <th><%= f.label :memo , "スケジュールのメモ" %></th>
+        <td><%= f.text_area :memo %></td>
+      </tr>
+    </table>
+
+    <div>
+      <ul>
+        <li><%= link_to "キャンセル", :users %></li>
+        <li><%= f.submit "保存" %></li>
+      </ul>
+    </div>
+  <% end %>
+  
+</section>

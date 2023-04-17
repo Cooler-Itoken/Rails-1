@@ -1,0 +1,32 @@
+<%= render "shared/partial" %>
+
+<section class="all-show">
+  <h4><%= link_to "一覧に戻る", :users %></h4>
+
+  <div class="show-header">
+    <h4><%= @user.title %></h4>
+    <%= link_to "編集", :edit_user %>
+  <div>
+
+  <table>
+    <tr>
+      <th>開始日</th>
+      <td><%= @user.startDate %></td>
+    </tr>
+
+    <tr>
+      <th>終了日</th>
+      <td><% @user.endDate %></td>
+    </tr>
+
+    <tr>
+      <th>終日</th>
+      <td><%= @user.allDay %></td>
+    </tr>
+
+    <tr>
+      <th>スケジュールメモ</th>
+      <td><%= @user.memo %></td>
+    </tr>
+  </table>
+</section>
