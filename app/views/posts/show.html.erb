@@ -1,0 +1,32 @@
+<%= render "shared/partial" %>
+
+<section class="all-show">
+  <h4><%= link_to "一覧に戻る", :posts %></h4>
+
+  <div class="show-header">
+    <h4><%= @post.title %></h4>
+    <%= link_to "編集", :edit_post %>
+  <div>
+
+  <table>
+    <tr>
+      <th>開始日</th>
+      <td><%= @post.startDate %></td>
+    </tr>
+
+    <tr>
+      <th>終了日</th>
+      <td><%= @post.endDate %></td>
+    </tr>
+
+    <tr>
+      <th>終日</th>
+      <td><%= @post.allDay %></td>
+    </tr>
+
+    <tr>
+      <th>スケジュールメモ</th>
+      <td><%= @post.memo %></td>
+    </tr>
+  </table>
+</section>
