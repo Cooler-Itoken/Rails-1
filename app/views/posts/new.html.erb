@@ -9,8 +9,8 @@
     <h2>予定の新規追加</h2>
   </div>
 
-  <%= render "shared/error", obj: @user %>
-  <%= form_with model: @user do |f| %>
+  <%= render "shared/error", obj: @post %>
+  <%= form_with model: @post do |f| %>
     <table class="new-table">
       <tr>
         <th><%= f.label :title , "タイトル" %></th>
@@ -40,7 +40,7 @@
 
     <div>
       <ul>
-        <li><%= link_to "キャンセル", :users %></li>
+        <li><%= link_to "キャンセル", :posts %></li>
         <li><%= f.submit "保存" %></li>
       </ul>
     </div>

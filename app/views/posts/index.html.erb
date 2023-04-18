@@ -7,7 +7,7 @@
 <section class="content">
   <div class="title">
     <h2>予定一覧</h2>
-    <p><%= link_to "新規追加", :new_user %></p>
+    <p><%= link_to "新規追加", :new_post %></p>
   </div>
   <table class="index-table">
     <thead>
@@ -25,24 +25,24 @@
     </thead>
 
     <tbody>
-      <% @users.each do |user|%>
+      <% @posts.each do |post|%>
         <tr>
-          <td><%= user.id %></td>
-          <td><%= user.title %></td>
-          <td><%= user.startDate %></td>
-          <td><%= user.endDate %></td>
-          <td><%= user.allDay %></td>
-          <td><%= user.updated_at.to_s(:default) %></td>
-          <td class="option"><%= link_to "詳細", user %></td>
-          <td class="option"><%= link_to "編集", [:edit, user] %></td>
-          <td class="option"><%= link_to "削除", user, method: :delete, data: { confirm: "本当に削除しますか？"}%></td>
+          <td><%= post.id %></td>
+          <td><%= post.title %></td>
+          <td><%= post.startDate %></td>
+          <td><%= post.endDate %></td>
+          <td><%= post.allDay %></td>
+          <td><%= post.updated_at.to_s(:default) %></td>
+          <td class="option"><%= link_to "詳細", post %></td>
+          <td class="option"><%= link_to "編集", [:edit, post] %></td>
+          <td class="option"><%= link_to "削除", post, method: :delete, data: { confirm: "本当に削除しますか？"}%></td>
         </tr>
       <% end %>
     </tbody>
   </table>
 
   <div class="count">
-    <p>予定合計<%= User.count %>件</p>
+    <p>予定合計<%= Post.count %>件</p>
     <p>本日の日付<%= Date.today.to_s(:date_jp) %></p>
   <div>
 </section>
